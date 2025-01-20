@@ -24,8 +24,8 @@ class HexColor extends Color {
   }
   ////[getRGBA] method to get the list of RGBA code
 
-  List<int> getRGBA(Color c) {
-    return [c.red, c.blue, c.green, c.alpha];
+  List<double> getRGBA(Color c) {
+    return [c.r, c.b, c.g, c.a];
   }
 }
 
@@ -43,10 +43,10 @@ extension ToRGBA on Color {
     String rgba = '';
     try {
       rgba = 'rgba(${[
-        red,
-        green,
-        blue,
-        double.parse(opacity.toStringAsFixed(1))
+        r,
+        g,
+        b,
+        double.parse(a.toStringAsFixed(1))
       ].join(',')})';
     } catch (e) {
       rgba = 'rgba(0,0,0,0)';
